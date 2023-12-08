@@ -36,16 +36,16 @@ theme:
 
     palette:
     - scheme: default
-      primary: green
+      primary: blue
       accent: red
       toggle:
-        icon: material/pine-tree-variant-outline
+        icon: material/shield-moon-outline
         name: Switch to dark mode
     - scheme: slate
-      primary: green
+      primary: blue
       accent: red
       toggle:
-        icon: material/pine-tree
+        icon: material/shield-moon
         name: Switch to light mode
 
     icon:

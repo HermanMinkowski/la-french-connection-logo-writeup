@@ -47,22 +47,19 @@ pour une colonne sont 2, 4, 7, 3, 4, la différence entre 7 et 2 est de
 5. Or il est impossible de trouver deux chiffres tels que $x_1 + y = 7$
 et $x_2 + y = 2$ où $1\leq x_i \leq 5$ et $1\leq y \leq 5$
 
------
-array $A \gets$ chiffres des unités ou dizaines
+```
+array 𝐴 <- chiffres des unités ou dizaines
 
-for all 𝑛 ∈ {0, . . . , 𝑎𝑟𝑟𝑎𝑦𝑙𝑒𝑛𝑔𝑡ℎ − 1} do
+for all 𝑛 ∈ {0, ..., 𝑎𝑟𝑟𝑎𝑦𝑙𝑒𝑛𝑔𝑡ℎ − 1} do
 
-if 𝐴[𝑖] == 0 then
-
-$A[i] \gets 10$
-
-end if
-
+     if 𝐴[𝑖] == 0 then
+          𝐴[𝑖] <- 10
+     end if
 end for
 
-return max(A) - min(A) \< 5
+return max(𝐴) - min(𝐴) < 5
+```
 
------
 
 Si on revient à la Table 7, on constate que les chiffres des dizaines pour la
 première colonne sont 7, 5, 4, 3, 9. On a une différence de 6 entre les
@@ -106,72 +103,46 @@ surchiffrer une colonne. Encore une fois, c'est une conséquence directe
 de l'utilisation du carré de Polybe qui limite le nombre des unité ou
 dizaines à un chiffre entre 1 et 5.
 
------
-array $col \gets$ une colonne du tableau
-
-$dizaineMin \gets 1$
-
-$dizaineMax \gets 5$
-
-$uniteMin \gets 1$ 
-
-$uniteMax \gets 5$
+```
+array col <- une colonne du tableau
+dizaineMin <- 1
+dizaineMax <- 5
+uniteMin <- 1
+uniteMax <- 5
 
 for all 𝑛 ∈ 𝑐𝑜𝑙 do
+     unite <- n%10
+     if $unite == 0$ then
+          uniteMin <- 5
+          uniteMax <- 5
+     else if unite < 7 then
+          uniteMin <- 1
+          uniteMax <- unite - 1
+     else
+          uniteMin <- unite - 5
+          uniteMax <- 5
+     end if
 
-$unite \gets n \mod 10$
+     array unitesPossibles <- {uniteMin,... , uniteMax}$
+     dizaine <- floor(n/10)%10
 
-if $unite == 0$ then
+     if dizaine == 0 then
+          dizaineMin <- 5
+          dizaineMax <- 5
+     else if dizaine < 7 then
+          dizaineMin <- 1
+          dizaineMax <- dizaine - 1
+     else
+          dizaineMin <- dizaine - 5
+          dizaineMax <- 5
+     end if
 
-$uniteMin \gets 5$
-
-$uniteMax \gets 5$
-
-else if $unite < 7$ then
-
-$uniteMin \gets 1$
-
-$uniteMax \gets unite - 1$
-
-else
-
-$uniteMin \gets unite - 5$
-
-$uniteMax \gets 5$
-
-end if
-
-array $unitesPossibles \gets \{uniteMin, \dots, uniteMax\}$
-
-$dizaine \gets floor(n/10) \mod 10$
-
-if $dizaine == 0$ then
-
-$dizaineMin \gets 5$
-
-$dizaineMax \gets 5$
-
-else if $dizaine < 7$ then
-
-$dizaineMin \gets 1$
-
-$dizaineMax \gets dizaine - 1$
-
-else
-
-$dizaineMin \gets dizaine - 5$
-
-$dizaineMax \gets 5$
-
-end if
-
-array $dizainesPossibles \gets \{dizaineMin, \dots, dizaineMax\}$
-
+     array dizainesPossibles <- {dizaineMin,... , dizaineMax}
 end for
 
-return $combinaisons(dizainesPossibles, unitesPossibles)$
+return combinaisons(dizainesPossibles, unitesPossibles)
 
------
+```
 
 Si on applique cet algorithme à chaque colonne de la Table 8 , on obtient les
 possibilités de la Table 9 pour chacun des caractères de la clé de
@@ -301,7 +272,7 @@ et la Table 10 pour tenter de déchiffrer le message on obtient
 *PRZVAZEDKYZSNOTGPOGMZCKEX*.
 
 On remarque un petit mot anglais et quelques bigrammes communs en
-anglais dans le message partiellement décodé:\
+anglais dans le message partiellement décodé:
 **PR**Z**VA**ZEDKYZS**NOT**GPOGMZC**KE**X.
 
 C'est un grand pas puisqu'on a identifié la langue du message original.
@@ -317,7 +288,7 @@ partiels **PRIVA**I**E**DKY**ISNOT**GPOGMIC**KE**X.
 
 À ce point, il est beaucoup plus facile d'essayer quelques autres clés
 que de tenter de modifier le carré de Polybe. En essayant avec les clés
-SECURITEAL et SECURITYAL on obtient:\
+SECURITEAL et SECURITYAL on obtient:
 
      SECURITEAL: PRIVATE?KYISNOTAP?GMICKEX
      SECURITYAL: PRIVATE?BIUYNNTQC?BHKVMVI?
