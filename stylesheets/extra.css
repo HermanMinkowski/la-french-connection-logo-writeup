@@ -1,0 +1,117 @@
+:root {
+
+    --md-primary: #9ff321; 
+
+    
+    /* Primary color shades */
+    --md-primary: #507000;
+    --md-primary-fg-color: #e6155a;
+    --md-primary-fg-color--light: #861f4194;
+    --md-primary-fg-color--dark: #ac325a;
+    --md-primary-bg-color: hsla(0, 0%, 100%, 1);
+    --md-primary-bg-color--light: hsla(0, 0%, 100%, 0.7);
+    --md-text-link-color: rgb(117, 120, 139);
+
+    /* Accent color shades */
+    --md-accent-fg-color: rgb(98, 18, 189);
+    --md-accent-fg-color--transparent: hsla(189, 100%, 37%, 0.1);
+    --md-accent-bg-color: hsla(0, 0%, 100%, 1);
+    --md-accent-bg-color--light: hsla(0, 0%, 100%, 0.7);
+  }
+  
+  :root > * {
+  
+    /* Code block color shades */
+    --md-code-bg-color: hsla(0, 0%, 96%, 1);
+    --md-code-fg-color: hsla(200, 18%, 26%, 1);
+
+    /* Footer */
+    --md-footer-bg-color: #ef0000;
+    --md-footer-bg-color--dark: hsla(0, 0%, 0%, 0.32);
+    --md-footer-fg-color: hsla(0, 0%, 100%, 1);
+    --md-footer-fg-color--light: hsla(0, 0%, 100%, 0.7);
+    --md-footer-fg-color--lighter: hsla(0, 0%, 100%, 0.3);
+  }
+
+  .navbar.navbar-expand-lg.navbar-dark.md-navbar.md-navbar--absolute {
+    background-color: #333; /* Change background color to dark gray */
+    color: #fff; /* Change text color to white */
+  }
+  .green {
+    color: #71c174;
+  }
+
+.md-typeset .admonition.objective,
+.md-typeset details.objective {
+  border-color: #71c174;
+}
+.md-typeset .objective > .admonition-title,
+.md-typeset .objective > summary {
+  background-color: #71c17436;
+}
+.md-typeset .objective > .admonition-title::before,
+.md-typeset .objective > summary::before {
+  background-color: #71c174;
+  -webkit-mask-image: var(--md-admonition-icon--objective);
+          mask-image: var(--md-admonition-icon--objective);
+}
+
+.md-typeset .admonition.hint,
+.md-typeset details.hint {
+  border-color: #71c174;
+}
+.md-typeset .hint > .admonition-title,
+.md-typeset .hint > summary {
+  background-color: #71c17436;
+}
+.md-typeset .hint > .admonition-title::before,
+.md-typeset .hint > summary::before {
+  background-color: #71c174;
+  -webkit-mask-image: var(--md-admonition-icon--hint);
+          mask-image: var(--md-admonition-icon--hint);
+}
+
+.md-typeset .admonition.quote,
+.md-typeset details.quote {
+  border-color: #71c174;
+}
+.md-typeset .quote > .admonition-title,
+.md-typeset .quote > summary {
+  background-color: #71c17436;
+}
+.md-typeset .quote > .admonition-title::before,
+.md-typeset .quote > summary::before {
+  background-color: #71c174;
+  -webkit-mask-image: var(--md-admonition-icon--quote);
+          mask-image: var(--md-admonition-icon--quote);
+}
+
+.md-typeset .admonition.answer,
+.md-typeset details.answer {
+  border-color: #ef0000;
+}
+.md-typeset .answer > .admonition-title,
+.md-typeset .answer > summary {
+  background-color: #ef000036;
+}
+.md-typeset .answer > .admonition-title::before,
+.md-typeset .answer > summary::before {
+  background-color: #ef0000;
+  -webkit-mask-image: var(--md-admonition-icon--answer);
+          mask-image: var(--md-admonition-icon--answer);
+}
+
+.md-typeset .admonition.note,
+.md-typeset details.note {
+  border-color: #71c174;
+}
+.md-typeset .note > .admonition-title,
+.md-typeset .note > summary {
+  background-color: #71c17436;
+}
+.md-typeset .note > .admonition-title::before,
+.md-typeset .note > summary::before {
+  background-color: #71c174;
+  -webkit-mask-image: var(--md-admonition-icon--note);
+          mask-image: var(--md-admonition-icon--note);
+}
